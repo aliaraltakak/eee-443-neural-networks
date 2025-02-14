@@ -15,7 +15,7 @@ This repository contains solutions for the projects assigned in EEE 443/543 - Sp
 - Represent FALSE as `-1` and TRUE as `1`.
 - Draw and describe the final network architecture.
 
-#### Part 2: Decision Region Estimation (50 pts)
+#### Part 2: Decision Region Estimation
 - Generate **1000 random points** in the range `[-2,2]²`.
 - Classify points using the neural network.
 - Plot points in **blue** for output `0` and **red** for output `1`.
