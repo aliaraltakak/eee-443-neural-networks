@@ -35,4 +35,22 @@ This repository contains solutions for the projects assigned in EEE 443/543 - Sp
   - Analyze performance with different learning rates (`η = 1, 10, 0.1`).
   - Repeat with `1000` data points and compare results.
 
+---
+
+## **Project 3: Multicategory Perceptron Training Algorithm for Digit Classification**  
+
+### **Overview**  
+In this project, a **Multicategory Perceptron Training Algorithm (PTA)** will be implemented to classify handwritten digits from the **MNIST dataset**.  
+
+### **Steps**  
+1. **Download the MNIST dataset** (training/test images and labels).  
+2. **Train a perceptron-based neural network** with:
+   - **784 input nodes** (one for each pixel in a 28×28 image).  
+   - **10 output nodes**, each representing a digit (0-9).  
+   - **Weight updates** based on misclassified samples.  
+3. **Stop training** when the misclassification rate falls below a chosen threshold (ϵ).  
+4. **Evaluate the trained model** on the MNIST test set.  
+5. **Experiment with different dataset sizes (n = 50, 1000, 60000)** and analyze performance.  
+
+
 
