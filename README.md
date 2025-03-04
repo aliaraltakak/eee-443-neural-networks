@@ -52,5 +52,30 @@ In this project, a **Multicategory Perceptron Training Algorithm (PTA)** will be
 4. **Evaluate the trained model** on the MNIST test set.  
 5. **Experiment with different dataset sizes (n = 50, 1000, 60000)** and analyze performance.  
 
+---
+ 
+## **Project 4: Neural Network for Curve Fitting**  
+
+### **Overview**  
+This project involves implementing a **1×24×1** neural network to perform curve fitting. The network will be trained using the **backpropagation algorithm with online learning** to minimize **Mean Squared Error (MSE)**.  
+
+### **Steps**  
+1. **Data Generation**:  
+   - Generate **300** random values **x** in **[0,1]**.  
+   - Compute target values **d** using a given function with added noise.  
+
+2. **Neural Network Architecture**:  
+   - **Input Layer**: 1 neuron  
+   - **Hidden Layer**: 24 neurons (tanh activation)  
+   - **Output Layer**: 1 neuron (linear activation)  
+
+3. **Training**:  
+   - Optimize weights using **backpropagation**.  
+   - Adjust **learning rate (η)** dynamically to ensure stability.  
+
+4. **Evaluation**:  
+   - Plot **MSE vs. epochs** during training.  
+   - Compare the learned curve to the original data.  
+
 
 
