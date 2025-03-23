@@ -77,5 +77,24 @@ This project involves implementing a **1×24×1** neural network to perform curv
    - Plot **MSE vs. epochs** during training.  
    - Compare the learned curve to the original data.  
 
+# Project 5: Neural Network for Digit Classification
+
+- **Objective:**  
+  Build a neural network from scratch that can classify handwritten digits (0–9) using the MNIST dataset. Write your own implementation of a neural network and the backpropagation algorithm (calculate all derivatives manually). Do not use external libraries for these computations.
+ - **Dataset:**  
+    Use the MNIST dataset, which includes 60,000 training images and 10,000 test images.
+ - **Network Design:**  
+  - **Input Layer:** 784 neurons (one for each pixel in a 28×28 image).
+  - **Output Layer:**
+    - Use 10 neurons with a one-hot encoding for digits (e.g., `[1, 0, ..., 0]` for 0, `[0, 1, ..., 0]` for 1, etc.).
+- **Hidden Layers:** Design the network architecture (you decide the number and size of hidden layers).
+- **Training:**  
+  Train the network using backpropagation to minimize the difference between the network's output and the correct labels.
+- **Evaluation:**  
+  Test your model on the MNIST test set. The network should achieve at least a 95% accuracy.
+  
+
+
+
 
 
