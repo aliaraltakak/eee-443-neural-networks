@@ -92,6 +92,29 @@ This project involves implementing a **1×24×1** neural network to perform curv
   Train the network using backpropagation to minimize the difference between the network's output and the correct labels.
 - **Evaluation:**  
   Test your model on the MNIST test set. The network should achieve at least a 95% accuracy.
+
+  # Project 6: Geometry Shape Classification
+
+The goal is to classify grayscale images of geometric shapes into one of nine predefined classes using a convolutional neural network (CNN) built with PyTorch.
+
+## Dataset
+The dataset includes 90,000 grayscale images (200x200), with 10,000 images per class:
+- Circle, Square, Octagon, Heptagon, Nonagon, Star, Hexagon, Pentagon, Triangle
+
+## Files
+
+- `0601_22001758_TAKAK.py` – Loads data, creates training/testing sets, trains the model.
+- `0602_22001758_TAKAK.pt` – Trained model (weights only, ≤ 50MB).
+- `0603_22001758_TAKAK.py` – Inference script that prints predicted class labels for all `.png` images in the current directory.
+
+## Model Architecture
+A CNN with:
+- 2 convolutional blocks
+- 3 additional max-pooling layers
+- Fully connected layers with dropout
+- Cross-entropy loss and Adam optimizer
+
+
   
 
 
