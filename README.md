@@ -93,7 +93,7 @@ This project involves implementing a **1×24×1** neural network to perform curv
 - **Evaluation:**  
   Test your model on the MNIST test set. The network should achieve at least a 95% accuracy.
 
-  # Project 6: Geometry Shape Classification
+# Project 6: Geometry Shape Classification
 
 The goal is to classify grayscale images of geometric shapes into one of nine predefined classes using a convolutional neural network (CNN) built with PyTorch.
 
@@ -113,6 +113,55 @@ A CNN with:
 - 3 additional max-pooling layers
 - Fully connected layers with dropout
 - Cross-entropy loss and Adam optimizer
+
+# Project 7: Character-Level Name Generation
+
+## Overview  
+Train a character-level LSTM in PyTorch to generate English given-names.  The network sees sequences of 11 one-hot encoded characters (26 letters + `<EON>` token) and learns to predict the next character.  At inference you supply a start letter and the model samples 20 new names via softmax.
+
+---
+
+## Files  
+
+- `names.txt`  
+  – 2 000 lower-case names, one per line.
+
+- `0701_22001758_TAKAK.py`  
+  – Preprocessing & training  
+  - Reads `names.txt`, pads to length 11 with `<EON>`, builds one-hot arrays.  
+  - Defines single-layer LSTM (input 27, hidden 128, output 27).  
+  - Trains with cross-entropy loss & Adam (lr=1e-3) for 200 epochs.  
+  - Saves loss plot (`lossPlot.png`) and weights (`0702_22001758_TAKAK.pth`).
+
+- `0702_22001758_TAKAK.pth`  
+  – Trained model weights.
+
+- `0703_22001758_TAKAK.py`  
+  – Inference script  
+  - Loads weights, prompts for letter (a–z).  
+  - Generates 20 names by autoregressive sampling with temperature=1.
+
+---
+
+## Model Architecture  
+
+1. **Input representation**  
+   - Sequence length \(T=11\).  
+   - Vocabulary size \(V=27\) (a–z + `<EON>`).  
+   - Each character → one-hot vector in \(\mathbb R^{27}\).
+
+2. **LSTM layer**  
+   - Single layer, hidden size \(H=128\).  
+   - Processes the \(T\)-step input sequence, updating hidden & cell states.
+
+3. **Output projection**  
+   - Linear layer: \(ℝ^{128}→ℝ^{27}\).  
+   - Produces logits for next‐character prediction at each time step.
+
+4. **Softmax & sampling**  
+   - Softmax converts logits to probabilities.  
+   - During training: compute cross-entropy loss against true next-character one-hot.  
+   - During inference: sample from the softmax distribution to pick the next character.  
 
 
   
