@@ -163,7 +163,56 @@ Train a character-level LSTM in PyTorch to generate English given-names.  The ne
    - During training: compute cross-entropy loss against true next-character one-hot.  
    - During inference: sample from the softmax distribution to pick the next character.  
 
+# Project 8: Exploring Inference in Large Language Models
 
+## Overview
+
+This project explores various aspects of inference in large language models (LLMs) using the minimal implementation provided in the nanoGPT repository. The assignment focuses on understanding prompt generation, temperature and top-k sampling, token embeddings, and the effect of pruning transformer layers on generated outputs.
+
+---
+
+## Steps
+
+1. **Inference Setup**
+
+  - Clone the repository: https://github.com/karpathy/nanoGPT
+  - Run a basic inference command:
+  python sample.py --init_from=gpt2 --start="one ring to rule them all," --num_samples=3 --max_new_tokens=100
+  - Confirm the model generates valid outputs using the prompt and specified parameters.
+
+2. **Model Analysis**
+
+  - Briefly describe the model’s architecture: the number of transformer layers, the use of activation functions, and how text is generated through autoregressive decoding.
+  - Explain the roles of:
+    - --start: the initial text prompt
+    - --num_samples: the number of sequences generated
+    - --max_new_tokens: the length of each generated sequence
+
+3. **Temperature Experiments**
+
+  - Set the temperature to 0.1, generate outputs, and observe the deterministic behavior.
+  - Set the temperature to 10, generate outputs, and observe the randomness and incoherence.
+  - Set top_k = 2 with temperature = 10, and analyze how restricting the vocabulary impacts generation.
+  - Discuss the purpose of the temperature parameter and how it influences the distribution of token selection.
+
+4. **Token Embedding Analysis**
+
+  - Locate the token embedding matrix wte in the model.
+  - Choose five common English words (e.g., "dog", "city", "book", "love", "science") and five rare or fabricated tokens (e.g., "xqzt", "blorpt", "thraldor", "uvuvwevwe", "zzzzz").
+  - Tokenize each and retrieve their embedding vectors.
+  - Compute:
+    - The L2 norm of each vector
+    - Pairwise cosine similarities among the common tokens
+    - Pairwise cosine similarities among the rare tokens
+  - Compare and interpret the differences in terms of vector norms and similarities.
+
+5. **Transformer Layer Pruning**
+
+  - Modify the model to use only even-numbered transformer blocks (layers 0, 2, 4, ...).
+  - Generate output and compare with the full-depth model.
+  - Analyze the impact on coherence, fluency, and length.
+  - Repeat the experiment by removing the final half of all layers.
+  - Comment on the influence of depth on language understanding and generation.
   
 
 
